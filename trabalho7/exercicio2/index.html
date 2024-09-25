@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="A melhor clínica de Uberlândia e Região. Venha conhecer">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Clínica Saúde Braba</title>
+    <style>
+        img {
+            width: 200px;
+            height: 150px;
+            transition: box-shadow 0.3s ease;
+        }
+    </style>
+    <script>
+        function addShadow(event) {
+            event.target.style.boxShadow = "0px 0px 10px 5px red"; 
+        }
+
+        function removeShadow(event) {
+            event.target.style.boxShadow = "none"; 
+        }
+        window.onload = function() {
+            const images = document.querySelectorAll('img');
+            images.forEach(function(img) {
+                img.addEventListener('mouseover', addShadow);
+                img.addEventListener('mouseout', removeShadow);
+            });
+        };
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Clínica Saúde Braba</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="galeria.html">Galeria</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Nossa Estrutura</h1>
+        <table>
+            <tr>
+                <td><img src="images/imagem1.jpg" alt="Imagem 1"></td>
+                <td><img src="images/imagem2.jpg" alt="Imagem 2"></td>
+                <td><img src="images/imagem3.jpg" alt="Imagem 3"></td>
+                <td><img src="images/imagem4.jpg" alt="Imagem 4"></td>
+            </tr>
+            <tr>
+                <td><img src="images/imagem5.jpg" alt="Imagem 5"></td>
+                <td><img src="images/imagem6.jpg" alt="Imagem 6"></td>
+                <td><img src="images/imagem7.jpg" alt="Imagem 7"></td>
+                <td><img src="images/imagem8.jpeg" alt="Imagem 8"></td>
+            </tr>
+        </table>
+    </main>
+        
+    <footer>
+        <i>Rua das ruas, Ibirité, MG</i> 
+    </footer>
+
+</body>
+</html>

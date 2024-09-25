@@ -1,0 +1,64 @@
+/* hamburguer.css */
+
+/* Container do menu */
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+  }
+  
+  /* Itens do menu */
+  .menu-item {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+  }
+  
+  .menu-item:hover {
+    background-color: #575757;
+  }
+  
+  /* Oculta o botão de hambúrguer em telas grandes */
+  .hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+  }
+  
+  /* Esconde o menu para o mobile inicialmente */
+  .menu-items {
+    display: flex;
+    gap: 20px;
+  }
+  
+  /* Media Query para telas menores que 768px */
+  @media (max-width: 768px) {
+    /* Muda o layout para colunar */
+    .menu-items {
+      display: none; /* Esconde o menu inicialmente */
+      flex-direction: column;
+      position: absolute;
+      top: 50px;
+      left: 0;
+      width: 100%;
+      background-color: #333;
+      padding: 0;
+    }
+  
+    .hamburger {
+      display: block;
+    }
+  
+    .menu-items.active {
+      display: flex;
+    }
+  
+    .menu-item {
+      text-align: center;
+      width: 100%;
+      padding: 15px 0;
+    }
+  }
