@@ -31,3 +31,9 @@ function addProduct() {
 function addToCart() {
   alert("Produto adicionado ao carrinho!");
 }
+
+function toggleLoginForm() {
+  const loginFormContainer = document.getElementById("login-form-container");
+  loginFormContainer.style.display =
+    loginFormContainer.style.display === "flex" ? "none" : "flex";
+}
