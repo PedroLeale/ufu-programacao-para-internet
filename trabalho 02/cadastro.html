@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="description" content="A clínica mais braba">
     <title>Página de Cadastro</title>
-
 </head>
 <body>
     <h1>Página de Cadastro</h1>
@@ -31,9 +30,13 @@
             <p><label for="data_nascimento">Data de Nascimento (opcional):</label>
             <input type="date" id="data_nascimento" name="data_nascimento"></p>
 
-            <p><label for="sexo">Sexo (opcional):</label>
-            <input type="radio" id="masculino" name="sexo" value="masculino"> Masculino
-            <input type="radio" id="feminino" name="sexo" value="feminino"> Feminino</p>
+            <p>
+                <span>Sexo (opcional):</span>
+                <input type="radio" id="masculino" name="sexo" value="masculino">
+                <label for="masculino">Masculino</label>
+                <input type="radio" id="feminino" name="sexo" value="feminino">
+                <label for="feminino">Feminino</label>
+            </p>
 
             <p><label for="estado_civil">Estado Civil (opcional):</label>
             <select id="estado_civil" name="estado_civil">
@@ -75,12 +78,19 @@
         <fieldset>
             <legend>Informações Adicionais</legend>
 
-            <p><label for="interesses">Interesses (opcional):</label>
-            <input type="checkbox" id="filmes" name="interesses[]" value="filmes"> Filmes
-            <input type="checkbox" id="informatica" name="interesses[]" value="informatica"> Informática
-            <input type="checkbox" id="games" name="interesses[]" value="games"> Games
-            <input type="checkbox" id="livros" name="interesses[]" value="livros"> Livros
-            <input type="checkbox" id="roupas" name="interesses[]" value="roupas"> Roupas</p>
+            <p>
+                <span>Interesses (opcional):</span>
+                <input type="checkbox" id="filmes" name="interesses[]" value="filmes">
+                <label for="filmes">Filmes</label>
+                <input type="checkbox" id="informatica" name="interesses[]" value="informatica">
+                <label for="informatica">Informática</label>
+                <input type="checkbox" id="games" name="interesses[]" value="games">
+                <label for="games">Games</label>
+                <input type="checkbox" id="livros" name="interesses[]" value="livros">
+                <label for="livros">Livros</label>
+                <input type="checkbox" id="roupas" name="interesses[]" value="roupas">
+                <label for="roupas">Roupas</label>
+            </p>
 
             <p><label for="info_complementar">Informações Complementares (opcional):</label>
             <textarea id="info_complementar" name="info_complementar"></textarea></p>
