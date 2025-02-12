@@ -8,14 +8,16 @@
 }
 
 /* Regra 2: Validação com ícones (4 campos) */
-div:has(>input:invalid)::after {
+.validacao div:has(>input:invalid)::after {
     content: '❌';
     color: red;
+    margin-left: 5px;
 }
 
-div:has(>input:valid)::after {
+.validacao div:has(>input:valid)::after {
     content: '✅';
     color: green;
+    margin-left: 5px;
 }
 
 /* Regra 3: Seletor de ID */
@@ -122,7 +124,7 @@ form {
 }
 
 input, select, textarea {
-    width: 100%;
+    width: 70%;
     padding: 8px;
     margin-bottom: 10px;
     border: 1px solid #ced4da;
@@ -139,4 +141,22 @@ fieldset {
 legend {
     padding: 0 10px;
     font-weight: bold;
+}
+
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.inputs_endereço {
+    display: block;
+}
+
+.inputs_endereço > div {
+    margin-bottom: 10px;
 }
