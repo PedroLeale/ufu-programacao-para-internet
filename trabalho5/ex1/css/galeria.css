@@ -1,0 +1,30 @@
+main {
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    align-items: flex-start;
+}
+
+@media (max-width: 600px) {
+    main {
+        width: 100%;
+    }
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 10px;
+    justify-content: flex-start;
+    flex-direction: row;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.imagem {
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 20px;
+}
+

@@ -20,21 +20,24 @@ body {
     padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
+    background-color: #4a525e;
 }
 
 header {
     text-align: center;
     padding: 2rem 0;
-    background-color: #e3f2fd;
+    background-color: #6e7c86;
     margin-bottom: 2rem;
+    border-radius: 10px;
 }
 
 nav {
-    background-color: #f8f9fa;
+    background-color: #000000;
     padding: 1rem;
     margin-bottom: 2rem;
     position: sticky;
     top: 0;
+    border-radius: 10px;
 }
 
 nav ul {
@@ -48,9 +51,14 @@ nav ul li {
     display: inline-block;
 }
 
+nav ul li a {
+    font-family: 'Verdana', sans-serif;
+}
+
 footer {
     text-align: center;
     padding: 1rem;
     margin-top: 2rem;
-    background-color: #f8f9fa;
+    background-color: #375d83;
+    color: white;
 }
