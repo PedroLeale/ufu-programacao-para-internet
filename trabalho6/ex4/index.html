@@ -1,11 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
-</head>
-<body>
-    <h1>Hello, World!</h1>
-</body>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Titulo da Pagina</title>
+  </head>
+  <body>
+    <h2>Tipos de nós na árvore DOM</h2>
+    <input type="text" id="myInput">
+    <pre id="output"></pre>
+  
+    <script>
+      const output = document.querySelector("#output");
+      for (let node of document.body.childNodes)
+        output.textContent += node.constructor.prototype + '\n';
+  
+      const input = document.querySelector("#myInput");
+      output.textContent += (input instanceof HTMLInputElement) + '\n';
+      output.textContent += (input instanceof HTMLElement) + '\n';
+      output.textContent += (input instanceof Element) + '\n';
+      output.textContent += (input instanceof Node) + '\n';
+      output.textContent += (input instanceof EventTarget) + '\n';
+  
+      output.textContent += document.constructor.prototype + '\n';
+    </script>
+
+    <h3>Explicações:</h3>
+    <p>O código JavaScript faz o seguinte:</p>
+    <ul>
+      <li>Itera sobre todos os nós filhos do elemento <code>body</code> e adiciona o protótipo do construtor de cada nó ao <code>output</code>.</li>
+      <li>Verifica se o elemento <code>input</code> é uma instância de várias classes e adiciona o resultado (true/false) ao <code>output</code>.</li>
+      <li>Adiciona o protótipo do construtor do documento ao <code>output</code>.</li>
+    </ul>
+    <p>A saída será algo assim:</p>
+    <pre>
+      [object HTMLHeadingElementPrototype]
+      [object TextPrototype]
+      [object HTMLInputElementPrototype]
+      [object TextPrototype]
+      [object HTMLPreElementPrototype]
+      [object TextPrototype]
+      true
+      true
+      true
+      true
+      true
+      [object HTMLDocumentPrototype]
+    </pre>
+    <p>Explicação da saída:</p>
+    <ul>
+      <li><code>[object HTMLHeadingElementPrototype]</code>: O protótipo do elemento <code>&lt;h2&gt;</code>.</li>
+      <li><code>[object TextPrototype]</code>: O protótipo de um nó de texto (espaço em branco ou texto entre elementos).</li>
+      <li><code>[object HTMLInputElementPrototype]</code>: O protótipo do elemento <code>&lt;input&gt;</code>.</li>
+      <li><code>[object HTMLPreElementPrototype]</code>: O protótipo do elemento <code>&lt;pre&gt;</code>.</li>
+      <li><code>true</code>: O elemento <code>input</code> é uma instância de <code>HTMLInputElement</code>, <code>HTMLElement</code>, <code>Element</code>, <code>Node</code> e <code>EventTarget</code>.</li>
+      <li><code>[object HTMLDocumentPrototype]</code>: O protótipo do objeto <code>document</code>.</li>
+    </ul>
+  </body>
 </html>
