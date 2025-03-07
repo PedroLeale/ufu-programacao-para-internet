@@ -1,146 +1,40 @@
-/* 1. Aprimore, de uma forma geral, todas as páginas do website */
-body {
-    font-family: Arial, sans-serif;
+* {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #1f1c1c;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
 }
 
-header, footer {
-    background-color: #690a0a;
-    color: #fff;
-    text-align: center;
-    padding: 1em 0;
-}
+a:link { color: #007bff; }
+a:visited { color: #6610f2; }
+a:hover { text-decoration: underline; }
+a:active { color: #0056b3; }
 
-header h1, footer i {
-    margin: 0;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    background-color: #444;
-}
-
-nav ul li {
-    margin: 0 1em;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-main {
-    padding: 2em;
-    background-color: #fff;
-    margin: 1em;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* 2. Estilizar campos do formulário com ícones de validação */
-input:invalid + span::before {
-    content: '✖';
-    color: red;
-    margin-left: 5px;
-}
-
-input:valid + span::before {
-    content: '✓';
-    color: green;
-    margin-left: 5px;
-}
-
-/* Escolha de quatro campos do formulário */
-#nome:invalid + span::before,
-#email:invalid + span::before,
-#cpf:invalid + span::before,
-#telefone:invalid + span::before {
-    content: '✖';
-    color: red;
-    margin-left: 5px;
-}
-
-#nome:valid + span::before,
-#email:valid + span::before,
-#cpf:valid + span::before,
-#telefone:valid + span::before {
-    content: '✓';
-    color: green;
-    margin-left: 5px;
-}
-
-/* 3. Regra para estilizar algo utilizando um seletor de id */
-#codigo_cliente {
-    background-color: #e0e0e0;
-    border: 1px solid #ccc;
-    padding: 0.5em;
-}
-
-/* 4. Regra para estilizar algo utilizando um seletor de classe */
-.button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 0.5em 1em;
-    cursor: pointer;
-    border-radius: 4px;
-}
-
-.button:hover {
-    background-color: #0056b3;
-}
-
-/* 5. Regra para estilizar algo utilizando um seletor de descendente */
-nav ul li a {
-    font-weight: bold;
-}
-
-/* 6. Regra para estilizar algo utilizando um seletor de irmão adjacente */
-h2 + p {
-    margin-top: 0;
-    font-style: italic;
-}
-
-/* 7. Alterar os estilos dos links utilizando pseudo-classes */
-a:link {
-    color: #007bff;
-}
-
-a:visited {
-    color: #0056b3;
-}
-
-a:hover {
-    color: #003f7f;
-    text-decoration: underline;
-}
-
-a:active {
-    color: #001f3f;
-}
-
-/* 8. Regra para estilizar algo utilizando a pseudo-classe :has */
-form:has(input:invalid) {
-    border: 2px solid red;
-}
-
-/* 9. Regra para estilizar algo utilizando a pseudo-classe :is */
 :is(h1, h2, h3) {
-    color: #333;
+    color: #2c3e50;
+    margin-bottom: 1rem;
 }
 
-/* 10. Regra para estilizar algo utilizando a pseudo-classe :first-child */
-nav ul li:first-child a {
-    color: #ff0000;
+body {
+    line-height: 1.6;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #4a525e;
 }
 
-/* 11. Regra para estilizar algo utilizando a pseudo-classe :first-of-type */
-main p:first-of-type {
-    font-weight: bold;
+header {
+    text-align: center;
+    padding: 2rem 0;
+    background-color: #6e7c86;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    background-color: #375d83;
+    color: white;
 }
