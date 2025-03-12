@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 3</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <p>Interesse</p>
+    <input type="text">
+    <ol>
+        <li>HTML <button>X</button> </li>
+        <li>CSS <button>X</button> </li>
+        <li>JavaScript <button>X</button> </li>
+    </ol>
+</body>
+<script>
+    const input = document.querySelector('input');
+    input.addEventListener("keyup", e => {
+        if (e.key === "Enter") {
+            
+            const novoLi = document.createElement('li');
+            const novoSpan = document.createElement('span');
+            const novoBotão = document.createElement('button');
+            
+            novoSpan.textContent = input.value;
+            novoBotão.textContent = 'X';
+
+            novoLi.appendChild(novoSpan);
+            novoLi.appendChild(novoBotão);
+            const ol = document.querySelector('ol');
+            ol.appendChild(novoLi);
+            input.value = '';
+
+            novoBotão.addEventListener('click', () => {
+                ol.removeChild(novoLi);
+            });
+        }
+    })
+</script>
+
+</html>

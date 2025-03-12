@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="A clínica mais braba">
+    <title>Clínica Saúde Braba</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/galeria.css">
+</head>
+<body>
+    <header>
+        <h1>Clínica Saúde Braba</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li>Era uma Navbar isso daqui</li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Nossa Estrutura</h1>
+        <table>
+            <tr>
+                <td><img src="images/imagem1.jpg" alt="Imagem 1" width="200" height="200"></td>
+                <td><img src="images/imagem2.jpg" alt="Imagem 2" width="200" height="200"></td>
+                <td><img src="images/imagem3.jpg" alt="Imagem 3" width="200" height="200"></td>
+                <td><img src="images/imagem4.jpg" alt="Imagem 4" width="200" height="200"></td>
+            </tr>
+            <tr>
+                <td><img src="images/imagem5.jpg" alt="Imagem 5" width="200" height="200"></td>
+                <td><img src="images/imagem6.jpg" alt="Imagem 6" width="200" height="200"></td>
+                <td><img src="images/imagem7.jpg" alt="Imagem 7" width="200" height="200"></td>
+                <td><img src="images/imagem8.jpeg" alt="Imagem 8" width="200" height="200"></td>
+            </tr>
+        </table>
+    </main>
+        
+    <footer>
+        <i>Rua das ruas, Ibirité, MG</i> 
+    </footer>
+
+</body>
+<script>
+        const images = document.querySelectorAll('img');
+        images.forEach(img => {
+            img.onmouseenter = () => img.classList.add("destaca");
+            img.onmouseleave = () => img.classList.remove("destaca");
+        });
+</script>
+</html>

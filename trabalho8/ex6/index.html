@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="A clínica mais braba">
+    <title>Clínica Saúde Braba</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/galeria.css">
+    <link rel="stylesheet" href="css/login.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Clínica Saúde Braba</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#" onclick="openTab(event, 'home')">Home</a></li>
+            <li><a href="#" onclick="openTab(event, 'galeria')">Galeria</a></li>
+            <li><a href="#" onclick="openTab(event, 'login')">Login</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div id="home" class="tab-content active">
+            <h2>Bem vindo à Clínica Saúde Braba</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti sequi itaque, laudantium deleniti optio iusto sint dolore laboriosam cupiditate culpa dignissimos explicabo consectetur, adipisci ratione. Esse ex laborum minima dolorum!</p>
+            <h2>Nossa Missão</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti sequi itaque, laudantium deleniti optio iusto sint dolore laboriosam cupiditate culpa dignissimos explicabo consectetur, adipisci ratione. Esse ex laborum minima dolorum!</p>
+            <h2>Nossos Valores</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti sequi itaque, laudantium deleniti optio iusto sint dolore laboriosam cupiditate culpa dignissimos explicabo consectetur, adipisci ratione. Esse ex laborum minima dolorum!</p>
+        </div>
+
+        <div id="galeria" class="tab-content">
+            <h1>Nossa Estrutura</h1>
+            <table>
+                <tr>
+                    <td><img src="images/imagem1.jpg" alt="Imagem 1" width="200" height="200"></td>
+                    <td><img src="images/imagem2.jpg" alt="Imagem 2" width="200" height="200"></td>
+                    <td><img src="images/imagem3.jpg" alt="Imagem 3" width="200" height="200"></td>
+                    <td><img src="images/imagem4.jpg" alt="Imagem 4" width="200" height="200"></td>
+                </tr>
+                    <td><img src="images/imagem5.jpg" alt="Imagem 5" width="200" height="200"></td>
+                    <td><img src="images/imagem6.jpg" alt="Imagem 6" width="200" height="200"></td>
+                    <td><img src="images/imagem7.jpg" alt="Imagem 7" width="200" height="200"></td>
+                    <td><img src="images/imagem8.jpeg" alt="Imagem 8" width="200" height="200"></td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="login" class="tab-content">
+            <div class="login-container">
+                <h2>Login</h2>
+                <form id="login-form">
+                    <label for="username">Usuário:</label>
+                    <input type="text" id="username" name="username" required>
+                    
+                    <label for="password">Senha:</label>
+                    <input type="password" id="password" name="password" required>
+                    
+                    <button type="submit" class="button">
+                        <svg xmlns="images/enter-svgrepo-com.svg" width="24" height="24" viewBox="0 0 24 24" fill="none" 
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+                        class="feather feather-log-in"> <polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+                        Login
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+        
+    <footer>
+        <i>Rua das ruas, Ibirité, MG</i> 
+    </footer>
+
+    <script>
+        function openTab(event, tabId) {
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(content => content.classList.remove('active'));
+
+            const targetTab = document.getElementById(tabId);
+            targetTab.classList.add('active');
+
+            const navLinks = document.querySelectorAll('nav ul li a');
+            navLinks.forEach(link => link.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>
