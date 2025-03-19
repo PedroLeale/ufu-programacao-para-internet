@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Revisao</title>
+
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: azure;
+        width: 80%;
+        top: 50%;
+        left: 50%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        margin: 0;
+      }
+
+      header {
+        background-color: black;
+        color: white;
+        margin: 5px;
+        padding: 10px;
+        text-align: center;
+        border-radius: 10px;
+      }
+
+      nav {
+        background-color: darkgray;
+        margin: 5px;
+        padding: 5px;
+        border-radius: 10px;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: black;
+      }
+
+      nav ul {
+        justify-content: center;
+        display: flex;
+        list-style: none;
+        padding: 0;
+        gap: 10px;
+      }
+
+      main {
+        display: flex;
+        background-color: lightgray;
+        padding: 10px;
+        margin: 5px;
+        border-radius: 10px;
+        justify-content: space-between;
+      }
+
+      aside {
+        background-color: darkgray;
+        padding: 5px;
+        margin: 5px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+      }
+      aside a {
+        text-decoration: none;
+        color: black;
+      }
+
+      aside ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      article {
+        padding: 5px;
+        margin: 5px;
+      }
+
+      .card {
+        background-color: white;
+        padding: 5px;
+        margin: 5px;
+        display: flex;
+        align-items: center;
+      }
+
+      .card p {
+        overflow-y: auto;
+        max-height: 50px;
+      }
+
+      @media (max-width: 750px) {
+        body {
+          width: 100%;
+          position: static;
+          transform: none;
+          margin: 0 auto;
+        }
+
+        main {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        aside,
+        article {
+          width: 100%;
+          margin: 5px 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Este é o Cabeçalho da Revisão</h1>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Sobre</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <aside>
+        <h2>Menu lateral</h2>
+        <ul>
+          <li><a href="#">Opção 1</a></li>
+          <li><a href="#">Opção 2</a></li>
+          <li><a href="#">Opção 3</a></li>
+        </ul>
+        <input type="text" id="tituloDoCard" placeholder="Título do Card" />
+        <input type="text" id="textoDoCard" placeholder="Texto do Card" />
+      </aside>
+
+      <article>
+        <h2>Artigo principal</h2>
+        <p id="clicar">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed sit unde
+          nisi totam vero illum error, voluptate culpa, voluptas, tempora quae
+          nesciunt ipsam deserunt velit. Reiciendis laudantium soluta quia
+          asperiores?
+        </p>
+        <input type="text" id="incrementaTexto" placeholder="Digite algo" />
+      </article>
+
+      <aside id="menuLateralCards">
+        <h2>Menu Lateral de Cards</h2>
+        <button type="button" id="btnIncrementa">Incrementar Cards</button>
+
+        <div class="card">
+          <div class="card-header">
+            <h3>Card 1</h3>
+            <img
+              src="/7 - revisao prova/2025-02-18_23-02.png"
+              alt="Imagem do card 1"
+              width="75"
+              height="75"
+            />
+          </div>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed sit
+            unde nisi totam vero illum error, voluptate culpa, voluptas, tempora
+            quae nesciunt ipsam deserunt velit. Reiciendis laudantium soluta
+            quia asperiores? Lorem ipsum dolor, sit amet consectetur adipisicing
+            elit. Sed sit unde nisi totam vero illum error, voluptate culpa,
+            voluptas, tempora quae nesciunt ipsam deserunt velit. Reiciendis
+            laudantium soluta quia asperiores?
+          </p>
+        </div>
+      </aside>
+    </main>
+
+    <script>
+      let cardContador = 1;
+      document
+        .getElementById("btnIncrementa")
+        .addEventListener("click", function () {
+          cardContador++;
+          let card = document.createElement("div");
+          card.classList.add("card");
+          card.innerHTML = `
+                <div class="card-header">
+                    <h3>Card ${cardContador}</h3>
+                    <img
+                        src="/7 - revisao prova/2025-02-18_23-02.png"
+                        alt="Imagem do card ${cardContador}"
+                        width="75"
+                        height="75"
+                    />
+                </div>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed sit unde
+            nisi totam vero illum error, voluptate culpa, voluptas, tempora quae
+            nesciunt ipsam deserunt velit. Reiciendis laudantium soluta quia
+            asperiores?
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed sit unde
+            nisi totam vero illum error, voluptate culpa, voluptas, tempora quae
+            nesciunt ipsam deserunt velit. Reiciendis laudantium soluta quia
+            asperiores?${cardContador}</p>
+            `;
+          let menuLateralCards = document.getElementById("menuLateralCards");
+          menuLateralCards.appendChild(card);
+        });
+
+      document
+        .getElementById("incrementaTexto")
+        .addEventListener("keyup", function (event) {
+          if (event.key === "Enter") {
+            let p = document.createElement("p");
+            p.textContent = document.getElementById("incrementaTexto").value;
+            let input = document.getElementById("incrementaTexto");
+            let article = document.querySelector("article");
+            article.insertBefore(p, input);
+            document.getElementById("incrementaTexto").value = "";
+            /*
+            // Seleciona o <h2> dentro do <article>
+            let h2 = document.querySelector("article h2");
+
+            // Insere o novo parágrafo logo após o <h2>
+            h2.insertAdjacentElement("afterend", p);
+
+            // Limpa o campo de entrada
+            document.getElementById("incrementaTexto").value = "";
+            */
+          }
+        });
+
+      /*Preciso pegar o conteúdo dos dois inputs em aside, e criar um card*/
+      document
+        .getElementById("textoDoCard")
+        .addEventListener("keyup", function (event) {
+          if (
+            event.key === "Enter" &&
+            document.getElementById("tituloDoCard").value !== ""
+          ) {
+            let titulo = document.getElementById("tituloDoCard").value;
+            let texto = document.getElementById("textoDoCard").value;
+            cardContador++;
+            let card = document.createElement("div");
+            card.classList.add("card");
+            card.innerHTML = `
+                <div class="card-header">
+                    <h3>${titulo} ${cardContador}</h3>
+                    <img
+                        src="/7 - revisao prova/2025-02-18_23-02.png"
+                        alt="Imagem do card ${cardContador}"
+                        width="75"
+                        height="75"
+                    />
+                </div>
+                <p>${texto}</p>
+            `;
+            let menuLateralCards = document.getElementById("menuLateralCards");
+            menuLateralCards.appendChild(card);
+            document.getElementById("tituloDoCard").value = "";
+            document.getElementById("textoDoCard").value = "";
+           }
+        });
+
+      document.getElementById("clicar").addEventListener("click", function () {
+        let texto = document.getElementById("clicar");
+        if (texto.style.color === "black") {
+          texto.style.color = "red";
+        } else {
+          texto.style.color = "black";
+        }
+      });
+    </script>
+  </body>
+</html>
